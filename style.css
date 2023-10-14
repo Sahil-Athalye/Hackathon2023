@@ -1,0 +1,55 @@
+* {
+    background-color: rgb(255, 255, 218);
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+input {
+    border: 2px solid rgb(144, 152, 176);
+    border-radius: 3px;
+    background-color: rgb(227, 231, 241);
+}
+
+.button {
+    background-color: rgb(157, 206, 248);
+    border: none;
+    border-radius: 3px;
+    padding: 8px 10px;
+}
+
+h1 {
+    padding-top: 3%;
+}
+
+#cityform, #cityname {
+    padding-top: 1%;
+}
+
+#week, #current, h4 {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th, td {
+    border: 1px solid;
+    padding: 5px;
+    text-align: center;
+}
+
+th {
+    background-color: rgb(157, 206, 248);
+}
+
+td {
+    background-color: rgb(227, 231, 241)
+}
+
+table {
+    border-collapse: collapse;
+}
+
+@media screen and (max-width: 444px) {
+    .button {
+        position: absolute;      
+    }
+}

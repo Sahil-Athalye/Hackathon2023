@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="title">Weather Forecast</h1>
+    <form id="cityform">
+        <label>Enter a city: </label>
+        <input type="text" id="city">
+        <input type="button" id="submitbutton" class="button" value="Submit">
+    </form>
+
+    <div id="forecast">
+        <h2 id="cityname"></h2>
+        <h4>Current Weather</h4>
+        <table id="current">
+            <tr>
+                <th>Date</th>
+                <th>Weather</th>
+                <th>Temperature</th>
+            </tr>
+            <tr>
+                <td id="day"></td>
+                <td id="weather"></td>
+                <td id="temp"></td>
+            </tr>
+        </table>
+        <h4>5 Day Forecast</h4>
+        <table id="week">
+            <tr>
+                <th>Date</th>
+                <th>Weather</th>
+                <th>High</th>
+                <th>Low</th>
+            </tr>
+            <tr>
+                <td id="day1"></td>
+                <td id="weather1"></td>
+                <td id="high1"></td>
+                <td id="low1"></td>
+            </tr>
+            <tr>
+                <td id="day2"></td>
+                <td id="weather2"></td>
+                <td id="high2"></td>
+                <td id="low2"></td>
+            </tr>
+            <tr>
+                <td id="day3"></td>
+                <td id="weather3"></td>
+                <td id="high3"></td>
+                <td id="low3"></td>
+            </tr>
+            <tr>
+                <td id="day4"></td>
+                <td id="weather4"></td>
+                <td id="high4"></td>
+                <td id="low4"></td>
+            </tr>
+            <tr>
+                <td id="day5"></td>
+                <td id="weather5"></td>
+                <td id="high5"></td>
+                <td id="low5"></td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="weather.js"></script>    
+</body>
+</html>
