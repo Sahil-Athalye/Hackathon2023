@@ -227,10 +227,10 @@ function displayQuestionnaire(){
     if(document.getElementById('Beef').checked) {
       input_strings.push("beef");
     }
-    if(document.getElementById('Pork').checked) {
+    else if(document.getElementById('Pork').checked) {
       input_strings.push("pork");
     }
-    if(document.getElementById('Chicken').checked) {
+    else if(document.getElementById('Chicken').checked) {
       input_strings.push("chicken");
     }
     else{
@@ -255,7 +255,7 @@ function displayQuestionnaire(){
     }
   
     if(starch){
-      if(document.getElementById('Rice').checked) {
+      if(document.getElementById('starchYes').checked) {
         input_strings.push("rice");
       }
       else{
@@ -269,12 +269,12 @@ function displayQuestionnaire(){
     var query = "Give me the name and only the name of a ";
 
     if(input_strings[2]=="spicy"){
-      query = query + "spicy"
+      query = query + "spicy "
     }
 
     query = query + cuisine + " " + input_strings[1] + " dish ";
 
-    if(sweet&&input_strings[3]==""){
+    if(sweet&&input_strings[3]=="sweet"){
       query = query + " that has no sugar, ";
     }
 
@@ -293,6 +293,10 @@ function displayQuestionnaire(){
     }
 
     console.log(query);
+    console.log(input_strings[0]);
+    console.log(input_strings[1]);
+    console.log(input_strings[2]);
+
 
 
 
