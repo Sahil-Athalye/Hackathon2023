@@ -53,3 +53,115 @@ table {
         position: absolute;      
     }
 }
+
+body {
+    background: white;
+}
+.slider {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    transform: translate(-30%,-30%);
+    width: 500px;
+    height: 60px;
+    padding: 20px;
+    padding-left: 10px;background: #fcfcfc;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;box-shadow: 0px 15px 40px #7E6D5766;
+}
+.slider label {
+    font-size: 24px;
+    font-weight: 400;
+    font-family: Open Sans;
+    padding-left: 10px;color: black;
+}
+.slider input[type="range"] {
+    width: 420px;
+    height: 2px;
+    background: black;
+    border: none;
+    outline: none;
+} 
+   
+body {
+    background: white;
+}
+.sliderPrice {
+    position: absolute;
+    top: 45%;
+    left: 30%;
+    transform: translate(-30%,-30%);
+    width: 500px;
+    height: 60px;
+    padding: 20px;
+    padding-left: 10px;
+    background: #fcfcfc;
+    border-radius: 20px;display: flex;align-items: center;box-shadow: 0px 15px 40px #7E6D5766;
+}.sliderPrice label {
+    font-size: 24px;font-weight: 400;font-family: Open Sans;padding-left: 10px;color: black;
+}
+.sliderPrice input[type="range"] {
+    width: 420px;height: 2px;background: black;border: none;outline: none;
+} 
+
+
+
+body {
+    background: white;
+}
+.sliderReviews {
+    position: absolute;
+    top: 60%;
+    left: 30%;
+    transform: translate(-30%,-30%);
+    width: 500px;
+    height: 60px;
+    padding: 20px;
+    padding-left: 10px;
+    background: #fcfcfc;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 15px 40px #7E6D5766;
+}.sliderReviews label {
+    font-size: 24px;font-weight: 400;
+    font-family: Open Sans;
+    padding-left: 10px;color: black;
+}
+.sliderReviews input[type="range"] {
+    width: 420px;height: 2px;
+    background: black;
+    border: none;
+    outline: none;
+} 
+
+body {
+    background: white;
+}
+.sliderDistance {
+    position: absolute;
+    top: 75%;
+    left: 30%;
+    transform: translate(-30%,-30%);
+    width: 500px;
+    height: 60px;
+    padding: 20px;
+    padding-left: 10px;
+    background: #fcfcfc;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 15px 40px #7E6D5766;
+}
+.sliderDistance label {
+    font-size: 24px;
+    font-weight: 400;
+    font-family: Open Sans;
+    padding-left: 10px;
+    color: black;
+}
+.sliderDistance input[type="range"] {
+    width: 420px;height: 2px;background: black;border: none;outline: none;
+} 
+  
