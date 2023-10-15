@@ -6,8 +6,16 @@ document.getElementById("submitbutton").addEventListener("click", getUserInput, 
 let starch = false;
 let sweet = false;
 
-function getUserInput(){   
-    // Setting variable for form input (get from HTML form)
+function getUserInput(){  
+    // clear table with new user input
+    for (var k = 0; k < 5; k++){
+        var num = k+1;
+        document.getElementById("restaurant"+num).innerHTML = "";
+        document.getElementById("rating"+num).innerHTML = "";
+        document.getElementById("reviews"+num).innerHTML = "";
+    }
+    
+    // get all user inputs
     var location = document.getElementById("city").value;
     document.getElementById("city").value = "";
 
@@ -17,17 +25,41 @@ function getUserInput(){
     var reviews = parseInt(document.getElementById("fader2").value);
     var radius = parseInt(document.getElementById("fader3").value) * 1600;
 
-    // checkboxes
-    // var reservation = document.getElementById("").value;
-    // var outdoor_seating = document.getElementById("").value;
-    // var wheelchair_accessible = document.getElementById("").value;
-    // var open_now = document.getElementById("").value;
-    // var veg_friendly = document.getElementById("").value;
+    // get checkbox input
+    var checkboxes = document.getElementsByName('box');
+    var result = [];
+    for (var i = 0; i < checkboxes.length; i++){
+        if (checkboxes[i].checked){
+            result[i] = checkboxes[i].value;
+        }
+        else {
+            result[i] = "";
+        }
+    }
+
+    // convert checkbox input to string for api url
+    var open_now = false;
+    var wheelchair_accessible, veg_friendly, outdoor_seating, reservation = "";
+    if (result[0] == "open_now"){
+        open_now = true;
+    }
+    if (result[1] == "wheelchair_accessible"){
+        wheelchair_accessible = "wheelchair_accessible";
+    }
+    if (result[2] == "veg_friendly"){
+        veg_friendly = "veg_friendly";
+    }
+    if (result[3] == "outdoor_seating"){
+        outdoor_seating = "outdoor_seating";
+    }
+    if (result[4] == "reservation"){
+        reservation = "reservation";
+    }
 
 
-    //let url = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location="+location+"&term="+cuisine+"&radius="+radius+"&open_now="+open_now+"&attributes="+reservation+"&attributes="+outdoor_seating+"&attributes="+wheelchair_accessible+"attributes="+veg_friendly+"&categories=&sort_by=rating&limit=50";
-    let url = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location="+location+"&term="+cuisine+"&radius="+radius+"&categories=&sort_by=rating&limit=50";
 
+    let url = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location="+location+"&term="+cuisine+"&radius="+radius+"&open_now="+open_now+"&attributes="+reservation+"&attributes="+outdoor_seating+"&attributes="+wheelchair_accessible+"attributes="+veg_friendly+"&categories=&sort_by=rating&limit=50";
+    //let url = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location="+location+"&term="+cuisine+"&radius="+radius+"&categories=&sort_by=rating&limit=50";
 
     getRestaurants(url, reviews, price, rating);
     displayQuestionnaire();
