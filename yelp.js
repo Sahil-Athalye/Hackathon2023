@@ -245,13 +245,6 @@ function displayQuestionnaire(){
       input_strings.push("");
     } 
   
-    if(document.getElementById('spiceYes').checked) {
-      input_strings.push("spicy");
-    }
-    else{
-      input_strings.push("");
-    } 
-  
     if(sweet){
       if(document.getElementById('sweetYes').checked) {
         input_strings.push("sweet");
@@ -270,4 +263,40 @@ function displayQuestionnaire(){
       } 
     }
   
+
+    var cuisine = document.getElementById("cuisine").value;
+
+    var query = "Give me the name and only the name of a ";
+
+    if(input_strings[2]=="spicy"){
+      query = query + "spicy"
+    }
+
+    query = query + cuisine + " " + input_strings[1] + " dish ";
+
+    if(sweet&&input_strings[3]==""){
+      query = query + " that has no sugar, ";
+    }
+
+    if(starch&&input_strings.length==4){
+      if(input_strings[3]=="rice"){
+        query = query + " and can be eaten with rice, ";
+      }
+      if(input_strings[3]=="noodles"){
+        query = query + " and can be eaten with noodles, ";
+      }
+
+    }
+
+    if(input_strings[0]!="null"){
+      query = query + "and does not contain " + input_strings[0];
+    }
+
+    console.log(query);
+
+
+
+
+
+
   }

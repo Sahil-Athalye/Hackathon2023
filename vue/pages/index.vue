@@ -1,4 +1,4 @@
-<script src = "https://cdn.jsdelivr.net/npm/vue@2" setup>
+<script setup>
 
 
 import OpenAI from "openai";
