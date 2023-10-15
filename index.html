@@ -4,6 +4,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss"></style> -->
 
     <title>Restaurantify</title>
     <link rel="stylesheet" href="style.css">
@@ -17,186 +19,258 @@
 
 
 
-<div class="slider">
-    <label for="fader">Star Rating </label>
-    <input type="range" min="0" max="5" value="4" id="fader" step="1" list="numStars1" oninput="rangeValue.innerText = this.value"> <p id="rangeValue">4</p>
-    <datalist id="numStars1">
-        <option>0</option>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-    </datalist>
-</div> 
+    <div class="content-parent">
+        <div class="left">
 
-<div class="sliderPrice">
-    <label for="fader1">Price </label>
-    <input type="range" min="1" max="4" value="2" id="fader1" step="1" list="price" oninput="rangeValue1.innerText = this.value"> <p id="rangeValue1">2</p> $
-    <datalist id="price">
-        <option value="1"> </option>
-        <option value="2"> </option>
-        <option value="3"> </option>
-        <option value="4"> </option>
-    </datalist>
-</div> 
-
-<div class="sliderReviews">
-    <label for="fader2">Minimum Number of Reviews </label>
-    <input type="range" min="0" max="300" value="60" id="fader2" step="30" list="numReviews" oninput="rangeValue2.innerText = this.value"> <p id="rangeValue2">60</p>
-    <datalist id="numReviews">
-        <option>0</option>
-        <option>30</option>
-        <option>60</option>
-        <option>90</option>
-        <option>120</option>
-        <option>150</option>
-        <option>180</option>
-        <option>210</option>
-        <option>240</option>
-        <option>270</option>
-        <option>300</option>
-    </datalist>
-</div> 
-
-<div class="sliderDistance">
-    <label for="fader3">Distance (miles) </label>
-    <input type="range" min="0" max="25" value="10" id="fader4" step="5" list="distance" oninput="rangeValue3.innerText = this.value"> <p id="rangeValue3">10</p>
-    <datalist id="distance">
-        <option>5</option>
-        <option>10</option>
-        <option>15</option>
-        <option>20</option>
-        <option>25</option>
-    </datalist>
-</div>
-
-<div class="dropdown">
-    <form>
-        <label for="cars">Choose a cuisine:</label>
-        <select name="cuisine" id="cuisine">
-            <option value="Ethiopian">Ethiopian</option>
-            <option value="Sudanese">Sudanese</option>
-            <option value="Somali">Somali</option>
-            <option value="Kenyan">Kenyan</option>
-            <option value="Senegalese">Senegalese</option>
-            <option value="Nigerian">Nigerian</option>
-            <option value="Cameroonian">Cameroonian</option>
-            <option value="Ghanaian">Ghanaian</option>
-            <option value="Ethiopian">Ethiopian</option>
-            <option value="Bengali">Bengali</option>
-            <option value="Indian">Indian</option>
-            <option value="Pakistani">Pakistani</option>
-            <option value="Afghani">Afghani</option>
-            <option value="Mexican">Mexican</option>
-            <option value="Guatemalan">Ethiopian</option>
-            <option value="Bahamanian">Bahamanian</option>
-            <option value="Puerto Rican">Puerto Rican</option>
-            <option value="Dominican">Dominican</option>
-            <option value="Brazilian">Brazilian</option>
-            <option value="Argentinian">Argentinian</option>
-            <option value="Peruvian">Peruvian</option>
-            <option value="Spanish">Spanish</option>
-            <option value="French">French</option>
-            <option value="Italian">Italian</option>
-            <option value="Greek">Greek</option>
-            <option value="Turkish">Turkish</option>
-            <option value="Lebanese">Lebanese</option>
-            <option value="Irani">Irani</option>
-            <option value="Iraqi">Iraqi</option>
-            <option value="Syrian">Syrian</option>
-            <option value="Chinese">Chinese</option>
-            <option value="Japanese">Japanese</option>
-            <option value="Korean">Korean</option>
-            <option value="Vietnamese">Vietnamese</option>
-            <option value="Thai">Thai</option>
-            <option value="Cambodian">Cambodian</option>
-            <option value="Lao">Lao</option>
-            <option value="Filipino">Filipino</option>
-            <option value="Hawaiian">Hawaiian</option>
-            <option value="British">British</option>
-        </select>
-        <br><br>
-    </form>
-</div>
-
-
-<input type="button" id="submitbutton" class="button" value="Submit">
-
-
-<div id = "allergyQuestion" class="invisible">
-    <form>
-        <label>Do you have any allergies? If so please list them or leave blank</label>
-        <input type="text" id="allergyInput">
-    </form>
-</div>
-
-<div id = "meatQuestion" class="invisible">
-    <legend id = "meatText">Would you like a beef, chicken, pork, or vegetarian dish?</legend>
-    
-      <div>
-        <input type="radio" id="Beef" name="meat" value="Beef" checked />
-        <label id = "meat">Beef</label>
-      </div>
-    
-      <div>
-        <input type="radio" id="Chicken" name="meat" value="Chicken" />
-        <label id = "meat">Chicken</label>
-      </div>
-
-      <div>
-        <input type="radio" id="Pork" name="meat" value="Pork" />
-        <label id = "meat">Pork</label>
-      </div>  
-      
-      <div>
-        <input type="radio" id="Vegetarian" name="meat" value="Vegetarian" />
-        <label id = "meat">Vegetarian</label>
-      </div> 
-</div>
-
-<div id = "spiceQuestion" class="invisible">
-    <legend id = "spiceText">Do you enjoy spice?</legend>
-    
-      <div>
-        <input type="radio" id="spiceYes" name="spice" value="Yes" checked />
-        <label>Yes</label>
-      </div>
-    
-      <div>
-        <input type="radio" id="spiceNo" name="spice" value="No" />
-        <label>No</label>
-      </div>
-</div>
-
-
-<div id = "starchQuestion" class="invisible">
-    <legend id = "starchText">Would you like rice or noodles?</legend>
-    
-      <div>
-        <input type="radio" id="starchYes" name="starch" value="Rice" checked />
-        <label>Rice</label>
-      </div>
-    
-      <div>
-        <input type="radio" id="starchNo" name="starch" value="Noodles" />
-        <label>Noodles</label>
-      </div>
-</div>
-
-<div id = "sweetQuestion" class="invisible">
-    <legend id = "sweetText">Are you opposed to a hint of sweetness in your entree?</legend>
-    
-      <div>
-        <input type="radio" id="sweetYes" name="sweet" value="Yes" checked />
-        <label>Yes</label>
-      </div>
-    
-      <div>
-        <input type="radio" id="sweetNo" name="sweet" value="No" />
-        <label>No</label>
-      </div>
-</div>
+            <div class="slider">
+                <label for="fader">Star Rating </label>
+                <input type="range" min="0" max="5" value="4" id="fader" step="1" list="numStars1" oninput="rangeValue.innerText = this.value"> <p id="rangeValue">4</p>
+                <datalist id="numStars1">
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </datalist>
+            </div> 
+            
+            <div class="sliderPrice">
+                <label for="fader1">Price </label>
+                <input type="range" min="1" max="4" value="2" id="fader1" step="1" list="price" oninput="rangeValue1.innerText = this.value"> <p id="rangeValue1">2</p> $
+                <datalist id="price">
+                    <option value="1"> </option>
+                    <option value="2"> </option>
+                    <option value="3"> </option>
+                    <option value="4"> </option>
+                </datalist>
+            </div> 
+            
+            <div class="sliderReviews">
+                <label for="fader2">Minimum Number of Reviews </label>
+                <input type="range" min="0" max="300" value="60" id="fader2" step="30" list="numReviews" oninput="rangeValue2.innerText = this.value"> <p id="rangeValue2">60</p>
+                <datalist id="numReviews">
+                    <option>0</option>
+                    <option>30</option>
+                    <option>60</option>
+                    <option>90</option>
+                    <option>120</option>
+                    <option>150</option>
+                    <option>180</option>
+                    <option>210</option>
+                    <option>240</option>
+                    <option>270</option>
+                    <option>300</option>
+                </datalist>
+            </div> 
+            
+            <div class="sliderDistance">
+                <label for="fader3">Distance (miles) </label>
+                <input type="range" min="0" max="25" value="10" id="fader3" step="5" list="distance" oninput="rangeValue3.innerText = this.value"> <p id="rangeValue3">10</p>
+                <datalist id="distance">
+                    <option>5</option>
+                    <option>10</option>
+                    <option>15</option>
+                    <option>20</option>
+                    <option>25</option>
+                </datalist>
+            </div>
+            
+            <div class="dropdown">
+                <form>
+                    <label for="cars">Choose a cuisine:</label>
+                    <select name="cuisine" id="cuisine">
+                        <option value="Ethiopian">Ethiopian</option>
+                        <option value="Sudanese">Sudanese</option>
+                        <option value="Somali">Somali</option>
+                        <option value="Kenyan">Kenyan</option>
+                        <option value="Senegalese">Senegalese</option>
+                        <option value="Nigerian">Nigerian</option>
+                        <option value="Cameroonian">Cameroonian</option>
+                        <option value="Ghanaian">Ghanaian</option>
+                        <option value="Ethiopian">Ethiopian</option>
+                        <option value="Bengali">Bengali</option>
+                        <option value="Indian">Indian</option>
+                        <option value="Pakistani">Pakistani</option>
+                        <option value="Afghani">Afghani</option>
+                        <option value="Mexican">Mexican</option>
+                        <option value="Guatemalan">Ethiopian</option>
+                        <option value="Bahamanian">Bahamanian</option>
+                        <option value="Puerto Rican">Puerto Rican</option>
+                        <option value="Dominican">Dominican</option>
+                        <option value="Brazilian">Brazilian</option>
+                        <option value="Argentinian">Argentinian</option>
+                        <option value="Peruvian">Peruvian</option>
+                        <option value="Spanish">Spanish</option>
+                        <option value="French">French</option>
+                        <option value="Italian">Italian</option>
+                        <option value="Greek">Greek</option>
+                        <option value="Turkish">Turkish</option>
+                        <option value="Lebanese">Lebanese</option>
+                        <option value="Irani">Irani</option>
+                        <option value="Iraqi">Iraqi</option>
+                        <option value="Syrian">Syrian</option>
+                        <option value="Chinese">Chinese</option>
+                        <option value="Japanese">Japanese</option>
+                        <option value="Korean">Korean</option>
+                        <option value="Vietnamese">Vietnamese</option>
+                        <option value="Thai">Thai</option>
+                        <option value="Cambodian">Cambodian</option>
+                        <option value="Lao">Lao</option>
+                        <option value="Filipino">Filipino</option>
+                        <option value="Hawaiian">Hawaiian</option>
+                        <option value="British">British</option>
+                    </select>
+                    <br><br>
+                </form>
+            </div>
+            
+            <div class="check-container">
+                <label class="container">Open Now 
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  
+                  <label class="container">Wheelchair Accessible
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  
+                  <label class="container">Vegetarian-friendly
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  
+                  <label class="container">Outdoor Seating
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                
+                  <label class="container">Takes Reservations
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+            </div>
+            
+            
+            
+            <div class="submit-parent">
+                <input type="button" id="submitbutton" class="button" value="submit">
+            </div>
+            
+            
+            <div id = "allergyQuestion" class="invisible">
+                <form>
+                    <label>Do you have any allergies? If so please list them or leave blank</label>
+                    <input type="text" id="allergyInput">
+                </form>
+            </div>
+            
+            <div id = "meatQuestion" class="invisible">
+                <legend id = "meatText">Would you like a beef, chicken, pork, or vegetarian dish?</legend>
+                
+                  <div>
+                    <input type="radio" id="Beef" name="meat" value="Beef" checked />
+                    <label id = "meat">Beef</label>
+                  </div>
+                
+                  <div>
+                    <input type="radio" id="Chicken" name="meat" value="Chicken" />
+                    <label id = "meat">Chicken</label>
+                  </div>
+            
+                  <div>
+                    <input type="radio" id="Pork" name="meat" value="Pork" />
+                    <label id = "meat">Pork</label>
+                  </div>  
+                  
+                  <div>
+                    <input type="radio" id="Vegetarian" name="meat" value="Vegetarian" />
+                    <label id = "meat">Vegetarian</label>
+                  </div> 
+            </div>
+            
+            <div id = "spiceQuestion" class="invisible">
+                <legend id = "spiceText">Do you enjoy spice?</legend>
+                
+                  <div>
+                    <input type="radio" id="spiceYes" name="spice" value="Yes" checked />
+                    <label>Yes</label>
+                  </div>
+                
+                  <div>
+                    <input type="radio" id="spiceNo" name="spice" value="No" />
+                    <label>No</label>
+                  </div>
+            </div>
+            
+            
+            <div id = "starchQuestion" class="invisible">
+                <legend id = "starchText">Would you like rice or noodles?</legend>
+                
+                  <div>
+                    <input type="radio" id="starchYes" name="starch" value="Rice" checked />
+                    <label>Rice</label>
+                  </div>
+                
+                  <div>
+                    <input type="radio" id="starchNo" name="starch" value="Noodles" />
+                    <label>Noodles</label>
+                  </div>
+            </div>
+            
+            <div id = "sweetQuestion" class="invisible">
+                <legend id = "sweetText">Are you opposed to a hint of sweetness in your entree?</legend>
+                
+                  <div>
+                    <input type="radio" id="sweetYes" name="sweet" value="Yes" checked />
+                    <label>Yes</label>
+                  </div>
+                
+                  <div>
+                    <input type="radio" id="sweetNo" name="sweet" value="No" />
+                    <label>No</label>
+                  </div>
+            </div>
+        </div>
+        <div class="right">
+            <div id="recs">
+                <h4>Restaurant recommendations</h4>
+                <table id="current">
+                  <tr>
+                    <th>Restaurant</th>
+                    <th>Rating</th>
+                    <th>Reviews</th>
+                  </tr>
+                  <tr>
+                    <td id="restaurant1"></td>
+                    <td id="rating1"></td>
+                    <td id="reviews1"></td>     
+                  </tr>
+                  <tr>
+                    <td id="restaurant2"></td>
+                    <td id="rating2"></td>
+                    <td id="reviews2"></td>
+                  </tr>
+                  <tr>
+                    <td id="restaurant3"></td>
+                    <td id="rating3"></td>
+                    <td id="reviews3"></td>
+                  </tr>
+                  <tr>
+                    <td id="restaurant4"></td>
+                    <td id="rating4"></td>
+                    <td id="reviews4"></td>
+                  </tr>
+                  <tr>
+                    <td id="restaurant5"></td>
+                    <td id="rating5"></td>
+                    <td id="reviews5"></td>
+                  </tr>
+                </table>
+              </div>
+        </div>
+    </div>
 
 
     <script src="yelp.js"></script> 
