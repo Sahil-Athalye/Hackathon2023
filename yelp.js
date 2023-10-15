@@ -15,7 +15,7 @@ function getUserInput(){
     var rating = parseFloat(document.getElementById("fader").value);
     var price = parseInt(document.getElementById("fader1").value);
     var reviews = parseInt(document.getElementById("fader2").value);
-    var radius = parseInt(document.getElementById("fader4").value) * 1600;
+    var radius = parseInt(document.getElementById("fader3").value) * 1600;
 
     // checkboxes
     // var reservation = document.getElementById("").value;
@@ -30,6 +30,7 @@ function getUserInput(){
 
 
     getRestaurants(url, reviews, price, rating);
+    displayQuestionnaire();
 
 }
 

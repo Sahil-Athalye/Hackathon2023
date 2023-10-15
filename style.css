@@ -272,9 +272,9 @@ body {
 
 
 .button {
-    /* position: relative;
-    top: 35%;
-    right: 28%;  */
+    position: relative;
+    top: 50%;
+    right: 10%; 
     background-color: rgb(157, 206, 248);
     border: none;
     border-radius: 3px;
@@ -287,8 +287,17 @@ body {
     }
 }
 
+.questionContainer {
+    display: block;
+    position: relative;
+    top: 50%;
+    /* padding-top: 50%; */
+    padding-right: 20%;
+    /* z-index: -10; */
+} 
+
 #allergyQuestion{
-    position: absolute;
+    position: relative;
     top: 90%;
     left: 30%;
     transform: translate(-30%,-30%);
@@ -304,7 +313,7 @@ body {
 }
 
 #meatQuestion{
-    position: absolute;
+    position: relative;
     top: 100%;
     left: 30%;
     transform: translate(-30%,-30%);
@@ -320,7 +329,7 @@ body {
 }
 
 #spiceQuestion{
-    position: absolute;
+    position: relative;
     top: 110%;
     left: 30%;
     transform: translate(-30%,-30%);
@@ -336,7 +345,7 @@ body {
 }
 
 #starchQuestion{
-    position: absolute;
+    position: relative;
     top: 130%;
     left: 30%;
     transform: translate(-30%,-30%);
@@ -352,7 +361,7 @@ body {
 }
 
 #sweetQuestion{
-    position: absolute;
+    position: relative;
     top: 130%;
     left: 30%;
     transform: translate(-30%,-30%);
@@ -387,4 +396,28 @@ body {
 .content-parent {
     display: flex;
     justify-content: space-between;
+}
+
+#submitFlavors{
+    position: absolute;
+    top: 300%;
+    left: 30%;
+    transform: translate(-30%,-30%);
+    width: 500px;
+    height: 30px;
+    padding: 10px;
+    padding-left: 10px;
+    background: #fcfcfc;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 15px 40px #7E6D5766;
+}
+
+#submitFlavors:hover{
+    cursor:grab
+}
+
+#submitbutton:hover{
+    cursor:grab
 }
