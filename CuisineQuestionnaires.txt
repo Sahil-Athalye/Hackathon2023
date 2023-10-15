@@ -1,0 +1,63 @@
+Universal Questions:
+
+Do you have any allergies? If so please list them or leave blank:
+
+Are you vegetarian? ***if yes then do not prompt next question***
+
+***if not vegetarian*** Would you like a beef, chicken, or pork dish?
+
+Do you enjoy spice?
+
+East African: Ethiopian, Eritrean, Sudanese, Somali, Kenya
+
+West African: Senegal, Nigeria, Cameroon, Ivory Coast, Ghana
+
+Indian Subcontinent: Bangladeshi, Bengali, Indian, Pakistani, Afghani
+
+Central America: Mexican, Guatemalan
+
+Carribean: Bahamanian, Puerto Rican, Dominican
+
+South American: Brazilian, Argentinian, Peruvian
+
+Western Europe: Spanish, French
+
+Italy: Italian
+
+Ottoman: Greek, Turkish
+
+Middle East: Lebanese, Irani, Iraqi, Syrian
+
+China: Chinese
+
+Would you like rice or noodles?
+
+Japan: Japanese
+
+Would you like rice or noodles?
+
+Are you opposed to eating raw fish?
+
+Korea: Korean
+
+Would you like rice or noodles?
+
+Vietnam: Vietnamese
+
+Southeast Asia: Thai, Cambodian, Lao
+
+Are you opposed to a hint of sweetness in your entree?
+
+Phillippines: Filipino
+
+Are you opposed to a hint of sweetness in your entree?
+
+if Hawaiian recommend Poke
+
+if British then Chicken Tikka Masala
+
+Northern Europe: Swedish, Danish, Norwegian
+
+Central Europe: German, Austrian, Hungarian
+
+
