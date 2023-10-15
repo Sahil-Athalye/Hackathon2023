@@ -13,14 +13,12 @@
     <form id="cityform">
         <label>Enter your location (city or address): </label>
         <input type="text" id="city">
-        <input type="button" id="submitbutton" class="button" value="Submit">
     </form>
 
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 <div class="slider">
-    <label for="fader">Star Rating1 </label>
+    <label for="fader">Star Rating </label>
     <input type="range" min="0" max="5" value="4" id="fader" step="1" list="numStars1" oninput="rangeValue.innerText = this.value"> <p id="rangeValue">4</p>
     <datalist id="numStars1">
         <option>0</option>
@@ -73,6 +71,135 @@
     </datalist>
 </div>
 
-    <script src="yelp.js"></script>    
+<div class="dropdown">
+    <form>
+        <label for="cars">Choose a cuisine:</label>
+        <select name="cuisine" id="cuisine">
+            <option value="Ethiopian">Ethiopian</option>
+            <option value="Sudanese">Sudanese</option>
+            <option value="Somali">Somali</option>
+            <option value="Kenyan">Kenyan</option>
+            <option value="Senegalese">Senegalese</option>
+            <option value="Nigerian">Nigerian</option>
+            <option value="Cameroonian">Cameroonian</option>
+            <option value="Ghanaian">Ghanaian</option>
+            <option value="Ethiopian">Ethiopian</option>
+            <option value="Bengali">Bengali</option>
+            <option value="Indian">Indian</option>
+            <option value="Pakistani">Pakistani</option>
+            <option value="Afghani">Afghani</option>
+            <option value="Mexican">Mexican</option>
+            <option value="Guatemalan">Ethiopian</option>
+            <option value="Bahamanian">Bahamanian</option>
+            <option value="Puerto Rican">Puerto Rican</option>
+            <option value="Dominican">Dominican</option>
+            <option value="Brazilian">Brazilian</option>
+            <option value="Argentinian">Argentinian</option>
+            <option value="Peruvian">Peruvian</option>
+            <option value="Spanish">Spanish</option>
+            <option value="French">French</option>
+            <option value="Italian">Italian</option>
+            <option value="Greek">Greek</option>
+            <option value="Turkish">Turkish</option>
+            <option value="Lebanese">Lebanese</option>
+            <option value="Irani">Irani</option>
+            <option value="Iraqi">Iraqi</option>
+            <option value="Syrian">Syrian</option>
+            <option value="Chinese">Chinese</option>
+            <option value="Japanese">Japanese</option>
+            <option value="Korean">Korean</option>
+            <option value="Vietnamese">Vietnamese</option>
+            <option value="Thai">Thai</option>
+            <option value="Cambodian">Cambodian</option>
+            <option value="Lao">Lao</option>
+            <option value="Filipino">Filipino</option>
+            <option value="Hawaiian">Hawaiian</option>
+            <option value="British">British</option>
+        </select>
+        <br><br>
+    </form>
+</div>
+
+
+<input type="button" id="submitbutton" class="button" value="Submit">
+
+
+<div id = "allergyQuestion" class="invisible">
+    <form>
+        <label>Do you have any allergies? If so please list them or leave blank</label>
+        <input type="text" id="allergyInput">
+    </form>
+</div>
+
+<div id = "meatQuestion" class="invisible">
+    <legend id = "meatText">Would you like a beef, chicken, pork, or vegetarian dish?</legend>
+    
+      <div>
+        <input type="radio" id="Beef" name="meat" value="Beef" checked />
+        <label id = "meat">Beef</label>
+      </div>
+    
+      <div>
+        <input type="radio" id="Chicken" name="meat" value="Chicken" />
+        <label id = "meat">Chicken</label>
+      </div>
+
+      <div>
+        <input type="radio" id="Pork" name="meat" value="Pork" />
+        <label id = "meat">Pork</label>
+      </div>  
+      
+      <div>
+        <input type="radio" id="Vegetarian" name="meat" value="Vegetarian" />
+        <label id = "meat">Vegetarian</label>
+      </div> 
+</div>
+
+<div id = "spiceQuestion" class="invisible">
+    <legend id = "spiceText">Do you enjoy spice?</legend>
+    
+      <div>
+        <input type="radio" id="spiceYes" name="spice" value="Yes" checked />
+        <label>Yes</label>
+      </div>
+    
+      <div>
+        <input type="radio" id="spiceNo" name="spice" value="No" />
+        <label>No</label>
+      </div>
+</div>
+
+
+<div id = "starchQuestion" class="invisible">
+    <legend id = "starchText">Would you like rice or noodles?</legend>
+    
+      <div>
+        <input type="radio" id="starchYes" name="starch" value="Rice" checked />
+        <label>Rice</label>
+      </div>
+    
+      <div>
+        <input type="radio" id="starchNo" name="starch" value="Noodles" />
+        <label>Noodles</label>
+      </div>
+</div>
+
+<div id = "sweetQuestion" class="invisible">
+    <legend id = "sweetText">Are you opposed to a hint of sweetness in your entree?</legend>
+    
+      <div>
+        <input type="radio" id="sweetYes" name="sweet" value="Yes" checked />
+        <label>Yes</label>
+      </div>
+    
+      <div>
+        <input type="radio" id="sweetNo" name="sweet" value="No" />
+        <label>No</label>
+      </div>
+</div>
+
+
+    <script src="yelp.js"></script> 
+    <script src="search.js"></script>   
 </body>
 </html>
