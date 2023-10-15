@@ -297,6 +297,23 @@ function displayQuestionnaire(){
     console.log(input_strings[1]);
     console.log(input_strings[2]);
 
+    const { Configuration, OpenAIApi } = require("openai");
+    require('dotenv').config()
+
+    const configuration = new Configuration({
+      apiKey: process.env.OPENAI_API_KEY,
+    });
+    const openai = new OpenAIApi(configuration);
+
+    async function runCompletion () {
+      const completion = await openai.createCompletion({
+      model: "gpt-3.5-turbo",
+      prompt: query,
+      max_tokens:4000
+      });
+      console.log(completion.data.choices[0].text);
+  }
+  runCompletion();
 
 
 
