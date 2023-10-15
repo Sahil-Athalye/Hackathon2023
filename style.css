@@ -4,15 +4,22 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+h1 {
+    padding-top: 3%;
+}
+
+h5 {
+    position: absolute;
+    padding-top: 35%;
+    right: 10%;
+}
+
 input {
     border: 2px solid rgb(144, 152, 176);
     border-radius: 3px;
     background-color: rgb(227, 231, 241);
 }
 
-h1 {
-    padding-top: 3%;
-}
 
 #cityform, #cityname {
     padding-top: 1%;
@@ -38,7 +45,12 @@ td {
 }
 
 table {
+    position:relative;
     border-collapse: collapse;
+    width: 200%;
+    height: 50%;
+    text-align:left;
+    right: 100%;
 }
 
 
@@ -270,7 +282,7 @@ body {
       display : none;
   }
 
-
+/* 
 .button {
     position: relative;
     top: 50%;
@@ -279,7 +291,34 @@ body {
     border: none;
     border-radius: 3px;
     padding: 8px 10px;
+} */
+
+/*First Submit button */
+.button {
+    position: relative;
+    top: 110%; 
+    left: 15%; 
+    border: none;
+    border-radius: 3px;
+    padding: 10px;
+} 
+
+#submitbutton{
+    position: absolute;
+    /* top: 110%;
+    left: 15%; */
+    transform: translate(-30%,-30%);
+    width: 500px;
+    height: 30px;
+    padding: 10px;
+    padding-left: 10px;
+    background: #6e82d1;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 15px 40px #7E6D5766;
 }
+
 
 @media screen and (max-width: 444px) {
     .button {
@@ -291,6 +330,7 @@ body {
     display: block;
     position: relative;
     top: 50%;
+    left: 15%;
     /* padding-top: 50%; */
     padding-right: 20%;
     /* z-index: -10; */
@@ -398,10 +438,20 @@ body {
     justify-content: space-between;
 }
 
+.flavorButton {
+    position: relative;
+    top: 38%; 
+    left: 25%; 
+    border: none;
+    border-radius: 3px;
+    padding: 10px;
+} 
+
+/* bottom submit */
 #submitFlavors{
     position: absolute;
-    top: 300%;
-    left: 30%;
+    /* top: 100%;
+    left: 15%; */
     transform: translate(-30%,-30%);
     width: 500px;
     height: 30px;
