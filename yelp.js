@@ -117,6 +117,9 @@ function getRestaurants(url, reviews, price, rating){
 
         console.log(filtered);
 
+        document.getElementById("recs").classList.remove("invisible");
+        document.getElementById("submitFlavors").classList.remove("invisible");
+
         // show restaurants in table
         for (var k = 0; k < filtered.length; k++){
             var num = k+1;
