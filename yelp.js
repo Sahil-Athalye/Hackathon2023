@@ -8,20 +8,23 @@ function getUserInput(){
     var location = document.getElementById("city").value;
     document.getElementById("city").value = "";
 
-    var term = "food"; // change this to cuisine drop down
-
-    var rating = document.getElementById("fader").value;
-    var price = document.getElementById("fader1").value;
-    var reviews = document.getElementById("fader2").value;
+    var cuisine = document.getElementById("cuisine").value;
+    var rating = parseFloat(document.getElementById("fader").value);
+    var price = parseInt(document.getElementById("fader1").value);
+    var reviews = parseInt(document.getElementById("fader2").value);
     var radius = parseInt(document.getElementById("fader4").value) * 1600;
 
-    console.log(location);
-    console.log(rating);
-    console.log(price);
-    console.log(reviews);
-    console.log(radius);
+    // checkboxes
+    // var reservation = document.getElementById("").value;
+    // var outdoor_seating = document.getElementById("").value;
+    // var wheelchair_accessible = document.getElementById("").value;
+    // var open_now = document.getElementById("").value;
+    // var veg_friendly = document.getElementById("").value;
 
-    let url = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location="+location+"&term=indian&radius="+radius+"&categories=&sort_by=rating&limit=50";
+
+    //let url = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location="+location+"&term="+cuisine+"&radius="+radius+"&open_now="+open_now+"&attributes="+reservation+"&attributes="+outdoor_seating+"&attributes="+wheelchair_accessible+"attributes="+veg_friendly+"&categories=&sort_by=rating&limit=50";
+    let url = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location="+location+"&term="+cuisine+"&radius="+radius+"&categories=&sort_by=rating&limit=50";
+
 
     getRestaurants(url, reviews, price, rating);
 
@@ -52,15 +55,47 @@ function getRestaurants(url, reviews, price, rating){
                 break;
             }
             else {
-                if ((restaurants[i].review_count >= reviews) && (restaurants[i].rating >= rating) && (restaurants[i].price >= price)){
-                    filtered[j] = restaurants[i];
-                    j++;
+                if (('review_count' in restaurants[i]) && ('rating' in restaurants[i]) && ('price' in restaurants[i])){
+                    var newPrice = 1;
+                    if (restaurants[i].price == "$"){
+                        newPrice = 1;
+                    }
+                    else if (restaurants[i].price == "$$"){
+                        newPrice = 2;
+                    }
+                    else if (restaurants[i].price == "$$$"){
+                        newPrice = 3;
+                    }
+                    else {
+                        newPrice = 4;
+                    }
+
+                    if ((restaurants[i].review_count >= reviews) && (restaurants[i].rating >= rating) && (newPrice >= price)){
+                        filtered[j] = restaurants[i];
+                        j++;
+                    }             
                 }
-                i++;
             }
+            i++;
         }
 
         console.log(filtered);
+
+        // show restaurants in table
+        for (var k = 0; k < filtered.length; k++){
+            var num = k+1;
+
+            var link = document.createElement("a");
+            link.setAttribute("href", filtered[k].url);
+
+            var linkText = document.createTextNode(filtered[k].name);
+            link.appendChild(linkText);
+
+            document.getElementById("restaurant"+num).appendChild(link);
+            document.getElementById("rating"+num).innerHTML = filtered[k].rating;
+            document.getElementById("reviews"+num).innerHTML = filtered[k].review_count;
+        }
+        
     });
 }
 
@@ -78,14 +113,14 @@ const eastAsia = ["Chinese", "Japanese", "Korean"];
 const vietnam = ["Vietnamese"];
 const seAsia = ["Thai", "Cambodian", "Lao", "Philippines"];
 
-$.ajax({
-  type: "POST",
-  url: "./backend/celebrity.py",
-  data: { param: text},
-  dataType: "text",
-}).done(function( o ) {
-   dish = get_chatgpt_response(input_string);
-});
+// $.ajax({
+//   type: "POST",
+//   url: "./backend/celebrity.py",
+//   data: { param: text},
+//   dataType: "text",
+// }).done(function( o ) {
+//    dish = get_chatgpt_response(input_string);
+// });
 
 function displayQuestionnaire(){
 
