@@ -181,7 +181,7 @@ body {
   .check-container {
     display: block;
     position: relative;
-    top: 35%;
+    top: 25%;
     /* padding-top: 50%; */
     padding-right: 20%;
     /* z-index: -10; */
@@ -285,7 +285,7 @@ body {
 /*First Submit button */
 .button {
     position: relative;
-    top: 180%; 
+    top: 150%; 
     left: 7%; 
     border: none;
     border-radius: 3px;
@@ -323,7 +323,7 @@ body {
 .questionContainer {
     display: block;
     position: relative;
-    top: 50%;
+    top: 40%;
     left: 15%;
     /* padding-top: 50%; */
     padding-right: 20%;
@@ -434,8 +434,8 @@ body {
 
 .flavorButton {
     position: relative;
-    top: 50%; 
-    left: 25%; 
+    top: 45%; 
+    left: 35%; 
     border: none;
     border-radius: 3px;
     padding: 10px;
